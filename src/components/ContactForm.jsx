@@ -39,7 +39,7 @@ export default function ContactForm({ compact = false }) {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // FIXME: Replace with your actual key from web3forms.com
+          access_key: 'd0456c84-e71f-471f-af0a-a5d8b70e6ce4', // FIXME: Replace with your actual key from web3forms.com
           subject: `New Contact Form Submission from ${formData.name}`,
           from_name: 'ArdikTrust Website',
           to_email: 'contactus@ardiktrust.com',
