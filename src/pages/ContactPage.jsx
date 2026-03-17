@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Mail, Globe, Linkedin, Phone, MapPin, Shield, Clock } from 'lucide-react';
 import { SectionContainer } from '../components/SectionContainer';
@@ -60,13 +60,13 @@ export default function ContactPage() {
             >
               <h2 className="text-xl font-bold font-poppins text-gray-900 mb-5">Contact Information</h2>
               <div className="space-y-4">
-                <a href="mailto:security@ardiktrust.com" className="flex items-center gap-4 group">
+                <a href="mailto:connect@ardiktrust.com" className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                     <Mail className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
                     <div className="text-xs text-gray-400 font-medium">Email Us</div>
-                    <div className="text-sm font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">security@ardiktrust.com</div>
+                    <div className="text-sm font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">connect@ardiktrust.com</div>
                   </div>
                 </a>
                 <a href="https://www.ardiktrust.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
@@ -78,7 +78,7 @@ export default function ContactPage() {
                     <div className="text-sm font-semibold text-gray-900 group-hover:text-green-700 transition-colors">www.ardiktrust.com</div>
                   </div>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                <a href="https://www.linkedin.com/company/ardiktrust/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center group-hover:bg-[#0A66C2]/20 transition-colors">
                     <Linkedin className="w-5 h-5 text-[#0A66C2]" />
                   </div>
