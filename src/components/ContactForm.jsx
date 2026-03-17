@@ -30,9 +30,35 @@ export default function ContactForm({ compact = false }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // FIXME: Replace with your actual key from web3forms.com
+          subject: `New Contact Form Submission from ${formData.name}`,
+          from_name: 'ArdikTrust Website',
+          to_email: 'contactus@ardiktrust.com',
+          ...formData
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Network error. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {

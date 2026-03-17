@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, ArrowRight, CheckCircle, Shield, Eye, Lock } from 'lucide-react';

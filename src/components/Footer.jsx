@@ -104,11 +104,11 @@ export default function Footer() {
             </p>
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <a href="mailto:security@ardiktrust.com" className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors text-sm group">
+              <a href="mailto:connect@ardiktrust.com" className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors text-sm group">
                 <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                security@ardiktrust.com
+                connect@ardiktrust.com
               </a>
               <a href="https://www.ardiktrust.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-blue-200 hover:text-white transition-colors text-sm group">
                 <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
@@ -119,7 +119,7 @@ export default function Footer() {
             </div>
             {/* Social */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/ardiktrust/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0A66C2]/30 hover:bg-[#0A66C2]/60 transition-colors text-sm font-medium text-blue-200 hover:text-white border border-[#0A66C2]/40"

@@ -4,12 +4,41 @@ import { Mail, ArrowRight, CheckCircle } from 'lucide-react';
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // FIXME: Replace with your actual key from web3forms.com
+          subject: 'New Newsletter Subscription',
+          from_name: 'ArdikTrust Website',
+          to_email: 'contactus@ardiktrust.com',
+          email: email
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Newsletter error:', error);
+      alert('Network error. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -50,8 +79,16 @@ export default function NewsletterSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="form-input flex-1 bg-white/10 border-white/20 text-white placeholder-blue-300 focus:border-white focus:ring-white/20"
               />
-              <button type="submit" className="btn-green whitespace-nowrap py-3 px-6 text-sm">
-                Subscribe <ArrowRight className="w-4 h-4" />
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="btn-green whitespace-nowrap py-3 px-6 text-sm disabled:opacity-70"
+              >
+                {loading ? 'Subscribing...' : (
+                  <>
+                    Subscribe <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
           )}

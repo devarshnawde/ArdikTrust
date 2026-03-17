@@ -35,7 +35,7 @@ function SimplePage({ title }) {
       <h1 className="text-4xl font-extrabold font-poppins text-gray-900 mb-6">{title}</h1>
       <p className="text-gray-500 text-lg leading-relaxed">
         This page is coming soon. For questions, contact us at{' '}
-        <a href="mailto:security@ardiktrust.com" className="text-blue-600 hover:underline">security@ardiktrust.com</a>.
+        <a href="mailto:connect@ardiktrust.com" className="text-blue-600 hover:underline">connect@ardiktrust.com</a>.
       </p>
     </div>
   );
